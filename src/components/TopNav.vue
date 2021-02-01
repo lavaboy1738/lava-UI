@@ -31,7 +31,10 @@ export default {
         background: pink;
         display: flex;
         padding: 1rem;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
         z-index: 10;
         justify-content: center;
         align-items: center;
