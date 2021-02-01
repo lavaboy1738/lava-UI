@@ -1,11 +1,14 @@
 <template>
     <div>
         <div class="top-nav">
-            <div class="logo" @click="toggleMenu">LOGO</div>
+            <div class="logo">LOGO</div>
             <ul class="menu">
                 <li>Menu1</li>
                 <li>Menu2</li>
             </ul>
+            <span class="toggleMenu" @click="toggleMenu">
+                <i class='bx bx-menu'></i>
+            </span>
         </div>
     </div>
 </template>
@@ -30,6 +33,8 @@ export default {
         padding: 1rem;
         position: relative;
         z-index: 10;
+        justify-content: center;
+        align-items: center;
         .logo{
             max-width: 6rem;
             margin-right: auto;
@@ -40,6 +45,27 @@ export default {
             flex-wrap: no-wrap;
             li{
                 margin: 0 1rem;
+            }
+        }
+        .toggleMenu{
+            display: none;
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            i{
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 500px){
+            .menu{
+                display: none;
+            }
+            .logo{
+                margin: 0 auto;
+            }
+            .toggleMenu{
+                display: inline-block;
             }
         }
     }

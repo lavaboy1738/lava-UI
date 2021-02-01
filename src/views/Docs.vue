@@ -41,10 +41,6 @@ export default {
         background: lightblue;
         width: 9.5rem;
         padding: 1rem;
-        padding-top: 4rem;
-        position: fixed;
-        top: 0;
-        left: 0;
         h2{
             margin-bottom: 0.25rem;
         }
@@ -52,6 +48,12 @@ export default {
             li{
                 padding: 0.25rem 0;
             }
+        }
+        @media (max-width: 500px) {
+            padding-top: 4rem;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
     }
 </style>
