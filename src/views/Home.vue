@@ -20,6 +20,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .banner{
+        padding: 6.25rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: lightgreen;
+        .actions{
+            padding: 0.5rem 0;
+            a{
+                margin: 0 0.5rem;
+                background: white;
+                display: inline-block;
+                $height: 1.75rem;
+                height: $height;
+                line-height: $height;
+                border-radius: $height/2;
+                padding: 0 0.5rem;
+            }
+        }
+    }
 </style>
 
