@@ -1,20 +1,22 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import Ronnie from "./components/Ronnie.vue";
-import Ronnie2 from "./components/Ronnie2.vue";
 import "./index.css";
 import { createWebHashHistory, createRouter } from "vue-router";
+//views 
+import Home from "./views/Home.vue";
+import Docs from "./views/Docs.vue";
+
 
 const history = createWebHashHistory();
 const router = createRouter({
     history: history,
     routes: [{
         path: "/",
-        component: Ronnie
+        component: Home
     },
     {
-        path:"/2",
-        component: Ronnie2
+        path:"/docs",
+        component: Docs
     }]
 });
 
