@@ -6,7 +6,7 @@
             <h2>Vue UI library developed by Lavaboy1738</h2>
             <p class="actions">
                 <a href="">Github</a>
-                <a href="">Get Started</a>
+                <router-link to="/docs">Get Started</router-link>
             </p>
         </div>
     </div>
