@@ -4,10 +4,10 @@ import Home from "./views/Home.vue";
 import Docs from "./views/Docs.vue";
 //components
 import WelcomeDocs from "./components/WelcomeDocs.vue";
-import Switch from "./components/Switch.vue";
-import Button from "./components/Button.vue";
-import Tabs from "./components/Tabs.vue";
-import Dialogue from "./components/Dialogue.vue";
+import SwitchDemo from "./components/SwitchDemo.vue";
+import ButtonDemo from "./components/ButtonDemo.vue";
+import TabsDemo from "./components/TabsDemo.vue";
+import DialogueDemo from "./components/DialogueDemo.vue";
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -24,19 +24,19 @@ export const router = createRouter({
             component: WelcomeDocs
         },{
             path: "switch",
-            component: Switch
+            component: SwitchDemo
         },
         {
             path: "button",
-            component: Button
+            component: ButtonDemo
         },
         {
             path: "tabs",
-            component: Tabs
+            component: TabsDemo
         },
         {
             path: "dialogue",
-            component: Dialogue
+            component: DialogueDemo
         }]
     }]
 });
