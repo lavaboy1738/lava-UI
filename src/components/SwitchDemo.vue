@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Switch :value="y" @input=" y = $event" />
+        <Switch v-model:value="inputValue" />
     </div>
 </template>
 
@@ -10,8 +10,8 @@ import Switch from "../library/Switch.vue";
 export default {
     components: {Switch},
     setup(){
-        const y = ref(false);
-        return{y}
+        const inputValue = ref(false);
+        return{inputValue}
     }
 }
 </script>
