@@ -1,5 +1,5 @@
 <template>
-    <button :class="{checked: value}" @click="toggle" > <span></span> </button>
+    <button class="lava-switch" :class="{'lava-checked': value}" @click="toggle" > <span></span> </button>
 </template>
 
 <script lang="ts">
@@ -19,7 +19,7 @@ export default {
 <style lang="scss" scoped>
     $height: 1.5rem;
     $height2: 1.3rem;
-    button{
+    .lava-switch{
         height: $height;
         width: $height * 2;
         outline: none;
@@ -39,12 +39,23 @@ export default {
             border-radius: $height2 / 2;
             transition: 0.3s all ease;
         }
-        &.checked{
+        &.lava-checked{
             background: blue;
             transition: 0.3s all ease;
             span{
                 transition: 0.3s all ease;
                 left: calc(100% - #{$height2} - 0.1rem);
+            }
+            &:active{
+                span{
+                    width: $height2 + 0.6rem;
+                    left: calc(100% - #{$height2} - 0.7rem);
+                }
+            }
+        }
+        &:active{
+            span{
+                width: $height2 + 0.6rem;
             }
         }
     }
