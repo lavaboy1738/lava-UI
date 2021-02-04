@@ -1,9 +1,9 @@
 <template>
     <div>
-        <Button @click="onClick" @mouseover="onMouseOver" theme="button" >Button</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" >Default</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" theme="link" >Link</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" theme="text" >Text</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" >Button</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus">Default</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" >Link</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="text" >Text</Button>
     </div>
 </template>
 
@@ -18,8 +18,11 @@ export default {
         const onMouseOver = ()=>{
 
         }
+        const onFocus = ()=>{
 
-        return{onClick, onMouseOver}
+        }
+
+        return{onClick, onMouseOver, onFocus}
     }
 }
 </script>
