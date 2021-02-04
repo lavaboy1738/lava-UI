@@ -10,19 +10,24 @@ export default {
     props: {
         theme: {
             type: String,
-            default: "button"
+            default: "normal"
         },
         size: {
+            type: String,
+            default: "normal"
+        },
+        priority: {
             type: String,
             default: "normal"
         }
     },
     setup(props){
-        const {theme, size} = props;
+        const {theme, size, priority} = props;
         const classes = computed(()=>{
             return {
                 [`lava-theme-${theme}`] : theme,
                 [`lava-size-${size}`] : theme,
+                [`lava-priority-${priority}`] : theme,
             }
         })
         return {classes}
@@ -36,6 +41,7 @@ export default {
     $color: #333;
     $blue: #40a9ff;
     $radius: 0.25rem;
+    $red: red;
     .lava-button {
     box-sizing: border-box;
     height: $height;
@@ -80,16 +86,34 @@ export default {
             background: darken(white, 5%);;
             }
         }
-        &.lava-theme-button{
-            &.lava-size-large{
-                font-size: 0.75* $height;
-                height: 1.5 * $height;
-                padding: 0 $height;
+        &.lava-size-large{
+            font-size: 0.75* $height;
+            height: 1.5 * $height;
+            padding: 0 0.6*$height;
+        }
+        &.lava-size-small{
+            font-size: 0.375 * $height;
+            height: 0.625 * $height;
+            padding: 0 0.25*$height;
+        }
+        &.lava-priority-primary {
+            background: $blue;
+            color: white;
+            border-color: $blue;
+            &:hover,
+            &:focus {
+                background: darken($blue, 10%);
+                border-color: darken($blue, 10%);
             }
-            &.lava-size-small{
-                font-size: 0.375 * $height;
-                height: 0.625 * $height;
-                padding: 0 0.125*$height;
+        }
+        &.lava-priority-danger {
+            background: $red;
+            border-color: $red;
+            color: white;
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
             }
         }
     }

@@ -1,16 +1,27 @@
 <template>
 <h1>Example 1</h1>
     <div>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" >Button</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus">Default</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" >Link</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="text" >Text</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" size="large">Large</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" size="normal">Normal</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" size="small">Small</Button>
     </div>
     <h1>Example 2</h1>
     <div>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" size="large" >Large</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus">Default</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" size="small" >Small</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" size="large" >Large Link</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" size="normal">Normal Link</Button>
+        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" size="small">Small Link</Button>
+    </div>
+    <h1>Example 3</h1>
+    <div>
+        <Button theme="text" size="large">Large Text</Button>
+        <Button theme="text" size="normal">Normal Text</Button>
+        <Button theme="text" size="small">Small Text</Button>
+    </div>
+    <h1>Example 4</h1>
+    <div>
+        <Button priority="primary">Primary</Button>
+        <Button>Default</Button>
+        <Button priority="danger">Danger</Button>
     </div>
 </template>
 
