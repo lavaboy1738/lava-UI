@@ -1,5 +1,5 @@
 <template>
-    <button v-bind="$attrs" class="lava-button" :class="classes">
+    <button v-bind="$attrs" class="lava-button" :class="classes" :disabled="disabled">
         <slot/>
     </button>
 </template>
@@ -19,6 +19,10 @@ export default {
         priority: {
             type: String,
             default: "normal"
+        },
+        disabled: {
+            type: Boolean,
+            default: false
         }
     },
     setup(props){
@@ -42,6 +46,7 @@ export default {
     $blue: #40a9ff;
     $radius: 0.25rem;
     $red: red;
+    $grey: grey;
     .lava-button {
     box-sizing: border-box;
     height: $height;
@@ -114,6 +119,13 @@ export default {
             &:focus {
                 background: darken($red, 10%);
                 border-color: darken($red, 10%);
+            }
+        }
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+            &:hover {
+                border-color: $grey;
             }
         }
     }

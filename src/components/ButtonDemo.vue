@@ -1,15 +1,15 @@
 <template>
 <h1>Example 1</h1>
     <div>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" size="large">Large</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" size="normal">Normal</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="button" size="small">Small</Button>
+        <Button theme="button" size="large">Large</Button>
+        <Button theme="button" size="normal">Normal</Button>
+        <Button theme="button" size="small">Small</Button>
     </div>
     <h1>Example 2</h1>
     <div>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" size="large" >Large Link</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" size="normal">Normal Link</Button>
-        <Button @click="onClick" @mouseover="onMouseOver" @focus="onFocus" theme="link" size="small">Small Link</Button>
+        <Button theme="link" size="large" >Large Link</Button>
+        <Button theme="link" size="normal">Normal Link</Button>
+        <Button theme="link" size="small">Small Link</Button>
     </div>
     <h1>Example 3</h1>
     <div>
@@ -22,6 +22,13 @@
         <Button priority="primary">Primary</Button>
         <Button>Default</Button>
         <Button priority="danger">Danger</Button>
+    </div>
+    <h1>Disabled</h1>
+    <div>
+        <Button>Default</Button>
+        <Button disabled>Disabled</Button>
+        <Button disabled theme="link">Link</Button>
+        <Button disabled theme="text">Text</Button>
     </div>
 </template>
 
