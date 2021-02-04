@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     $height: 1.5rem;
     $height2: 1.3rem;
     .lava-switch{

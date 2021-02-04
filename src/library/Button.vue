@@ -1,21 +1,36 @@
 <template>
-    <button v-bind="$attrs" class="lava-button" :class="`theme-${theme}`">
+    <button v-bind="$attrs" class="lava-button" :class="classes">
         <slot/>
     </button>
 </template>
 
 <script lang="ts">
+import { computed } from 'vue'
 export default {
     props: {
         theme: {
             type: String,
             default: "button"
         },
+        size: {
+            type: String,
+            default: "normal"
+        }
+    },
+    setup(props){
+        const {theme, size} = props;
+        const classes = computed(()=>{
+            return {
+                [`lava-theme-${theme}`] : theme,
+                [`lava-size-${size}`] : theme,
+            }
+        })
+        return {classes}
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     $height: 2rem;
     $border-color: #d9d9d9;
     $color: #333;
@@ -49,5 +64,34 @@ export default {
         &::-moz-focus-inner {
             border: 0;
         }
+        &.lava-theme-link{
+            border-color: transparent;
+            box-shadow: none;
+            color: $blue;
+            &:hover,&:focus{
+            color: lighten($blue, 10%);
+            }
+        }
+        &.lava-theme-text{
+            border-color: transparent;
+            box-shadow: none;
+            color: inherit;
+            &:hover,&:focus{
+            background: darken(white, 5%);;
+            }
+        }
+        &.lava-theme-button{
+            &.lava-size-large{
+                font-size: 0.75* $height;
+                height: 1.5 * $height;
+                padding: 0 $height;
+            }
+            &.lava-size-small{
+                font-size: 0.375 * $height;
+                height: 0.625 * $height;
+                padding: 0 0.125*$height;
+            }
+        }
     }
+
 </style>
