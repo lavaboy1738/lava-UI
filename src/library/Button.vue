@@ -1,5 +1,6 @@
 <template>
     <button v-bind="$attrs" class="lava-button" :class="classes" :disabled="disabled">
+        <span v-if="loading" class="lava-loading-indicator"></span>
         <slot/>
     </button>
 </template>
@@ -21,6 +22,10 @@ export default {
             default: "normal"
         },
         disabled: {
+            type: Boolean,
+            default: false
+        },
+        loading: {
             type: Boolean,
             default: false
         }
@@ -128,6 +133,22 @@ export default {
                 border-color: $grey;
             }
         }
+        .lava-loading-indicator{
+            display: inline-block;
+            width: 0.4375 * $height;
+            height: 0.4375 * $height;
+            margin-right: 0.125 * $height;
+            border-radius: 0.25 * $height;
+            border-color: $blue $blue $blue transparent;
+            border-style: solid;
+            border-width: 0.0625 * $height;
+            animation: lava-spin 1s infinite linear;
+        }
+    }
+
+    @keyframes lava-spin {
+        0% {transform: rotate(0deg)}
+        100% {transform: rotate(360deg)}
     }
 
 </style>
