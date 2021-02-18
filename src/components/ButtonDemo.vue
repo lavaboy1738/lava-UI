@@ -43,18 +43,5 @@
 import Button from "../library/Button.vue";
 export default {
     components: {Button},
-    // setup(){
-    //     const onClick = ()=>{
-
-    //     }
-    //     const onMouseOver = ()=>{
-
-    //     }
-    //     const onFocus = ()=>{
-
-    //     }
-
-    //     return{onClick, onMouseOver, onFocus}
-    // }
 }
 </script>
