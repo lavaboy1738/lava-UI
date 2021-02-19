@@ -1,6 +1,6 @@
 <template>
     <template v-if="isVisible">
-        <div class="lava-dialogue-overlay" @click="close"></div>
+        <div class="lava-dialogue-overlay" @click="onClickOverlay"></div>
         <div class="lava-dialogue-wrapper">
             <div class="lava-dialogue">
                 <header>Title <span @click="close" class="lava-dialogue-close"></span> </header>
@@ -9,8 +9,8 @@
                     <p>Strawberry Shortcake</p>
                 </main>
                 <footer>
-                    <Button priority="primary">Confirm</Button>
-                    <Button @click="close">Cancel</Button>
+                    <Button priority="primary" @click="confirm">Confirm</Button>
+                    <Button @click="cancel">Cancel</Button>
                 </footer>
             </div>
         </div>
@@ -24,6 +24,16 @@ export default {
         isVisible: {
             type: Boolean,
             default: false,
+        },
+        closeOnClickOverlay: {
+            type: Boolean,
+            default: true,
+        },
+        confirmFn:{
+            type: Function,
+        },
+        cancelFn: {
+            type: Function
         }
     },
     components: {Button},
@@ -31,8 +41,23 @@ export default {
         const close = ()=>{
             context.emit("update:isVisible", false)
         }
+        const onClickOverlay = ()=>{
+            if(props.closeOnClickOverlay){
+                close();
+            }
+        }
+        const cancel = ()=>{
+        }
+        const confirm = ()=>{
+            if(props.confirmFn?.()!== false){
+                close();
+            }
+        }
         return{
-            close
+            close,
+            onClickOverlay,
+            cancel,
+            confirm
         }
     }
 }
