@@ -1,7 +1,7 @@
 <template>
     <h1>Dialogue Component</h1>
     <Button @click="toggle">Toggle Dialogue</Button>
-    <Dialogue isVisible="isVisible" />
+    <Dialogue v-model:isVisible="isVisible" />
 </template>
 
 <script lang="ts">

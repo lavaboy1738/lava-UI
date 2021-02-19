@@ -1,16 +1,16 @@
 <template>
     <template v-if="isVisible">
-        <div class="lava-dialogue-overlay"></div>
+        <div class="lava-dialogue-overlay" @click="close"></div>
         <div class="lava-dialogue-wrapper">
             <div class="lava-dialogue">
-                <header>Title <span class="lava-dialogue-close"></span> </header>
+                <header>Title <span @click="close" class="lava-dialogue-close"></span> </header>
                 <main>
                     <p>Biscuits and gravy</p>
                     <p>Strawberry Shortcake</p>
                 </main>
                 <footer>
                     <Button priority="primary">Confirm</Button>
-                    <Button>Cancel</Button>
+                    <Button @click="close">Cancel</Button>
                 </footer>
             </div>
         </div>
@@ -26,7 +26,15 @@ export default {
             default: false,
         }
     },
-    components: {Button}
+    components: {Button},
+    setup(props, context){
+        const close = ()=>{
+            context.emit("update:isVisible", false)
+        }
+        return{
+            close
+        }
+    }
 }
 </script>
 
