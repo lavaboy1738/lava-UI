@@ -5,8 +5,7 @@
             <div class="lava-dialogue">
                 <header>Title <span @click="close" class="lava-dialogue-close"></span> </header>
                 <main>
-                    <p>Biscuits and gravy</p>
-                    <p>Strawberry Shortcake</p>
+                    <slot/>
                 </main>
                 <footer>
                     <Button priority="primary" @click="confirm">Confirm</Button>

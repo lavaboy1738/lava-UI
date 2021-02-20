@@ -5,7 +5,10 @@
     :closeOnClickOverlay="false" 
     confirmFn="confirmFn"
     cancelFn = "cancelFn"
-    />
+    >
+    <div>Content</div>
+    <div>Biscuits and Gravy</div>
+    </Dialogue>
 </template>
 
 <script lang="ts">
