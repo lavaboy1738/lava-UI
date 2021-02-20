@@ -54,6 +54,9 @@ export default {
             }
         }
         const cancel = ()=>{
+            if(props.cancelFn?.()!==false){
+                close();
+            }
         }
         const confirm = ()=>{
             if(props.confirmFn?.()!== false){
