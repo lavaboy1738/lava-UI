@@ -2,7 +2,7 @@
     <h1>Dialogue Component</h1>
     <Button @click="toggle">Toggle Dialogue</Button>
     <Dialogue v-model:isVisible="isVisible" 
-    :closeOnClickOverlay="false" 
+    :closeOnClickOverlay="false"        
     confirmFn="confirmFn"
     cancelFn = "cancelFn"
     >

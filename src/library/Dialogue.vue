@@ -1,20 +1,22 @@
 <template>
     <template v-if="isVisible">
-        <div class="lava-dialogue-overlay" @click="onClickOverlay"></div>
-        <div class="lava-dialogue-wrapper">
-            <div class="lava-dialogue">
-                <header>
-                    <slot name="title"/>
-                     <span @click="close" class="lava-dialogue-close"></span> </header>
-                <main>
-                    <slot name="content"/>
-                </main>
-                <footer>
-                    <Button priority="primary" @click="confirm">Confirm</Button>
-                    <Button @click="cancel">Cancel</Button>
-                </footer>
-            </div>
-        </div>
+        <Teleport to="body">
+            <div class="lava-dialogue-overlay" @click="onClickOverlay"></div>
+                <div class="lava-dialogue-wrapper">
+                    <div class="lava-dialogue">
+                        <header>
+                            <slot name="title"/>
+                            <span @click="close" class="lava-dialogue-close"></span> </header>
+                        <main>
+                            <slot name="content"/>
+                        </main>
+                        <footer>
+                            <Button priority="primary" @click="confirm">Confirm</Button>
+                            <Button @click="cancel">Cancel</Button>
+                        </footer>
+                    </div>
+                </div>
+        </Teleport>
     </template>
 </template>
 
