@@ -6,8 +6,13 @@
     confirmFn="confirmFn"
     cancelFn = "cancelFn"
     >
-    <div>Content</div>
-    <div>Biscuits and Gravy</div>
+    <template v-slot:title>
+        <strong>Title</strong>
+    </template>
+    <template v-slot:content>
+        <div>Content</div>
+        <div>Biscuits and Gravy</div>
+    </template>
     </Dialogue>
 </template>
 

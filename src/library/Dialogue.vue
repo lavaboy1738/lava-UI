@@ -3,9 +3,11 @@
         <div class="lava-dialogue-overlay" @click="onClickOverlay"></div>
         <div class="lava-dialogue-wrapper">
             <div class="lava-dialogue">
-                <header>Title <span @click="close" class="lava-dialogue-close"></span> </header>
+                <header>
+                    <slot name="title"/>
+                     <span @click="close" class="lava-dialogue-close"></span> </header>
                 <main>
-                    <slot/>
+                    <slot name="content"/>
                 </main>
                 <footer>
                     <Button priority="primary" @click="confirm">Confirm</Button>
@@ -20,6 +22,10 @@
 import Button from "./Button.vue";
 export default {
     props: {
+        title:{
+            type: String,
+            default: "Title"
+        },
         isVisible: {
             type: Boolean,
             default: false,
