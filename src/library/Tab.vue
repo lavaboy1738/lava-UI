@@ -1,5 +1,5 @@
 <template>
     <div>
-        A single Tab
+        <slot/>
     </div>
 </template>

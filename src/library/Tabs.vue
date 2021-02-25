@@ -1,6 +1,7 @@
 <template>
     <div>
-        Tabs Component
+        <div v-for="(title, index) in titles" :key="index">{{title}}</div>
+        <component v-for="(component, index) in defaults" :key="index" :is="component"/>
     </div>
 </template>
 
@@ -15,6 +16,13 @@ export default {
                 throw new Error("Tabs's children must be Tab")
             }
         })
+        const titles = defaults.map((tag)=>{
+            return tag.props.title
+        })
+        return {
+            defaults,
+            titles
+        }
     }
 }
 </script>
