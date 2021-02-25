@@ -1,7 +1,11 @@
 <template>
-    <div>
-        <div v-for="(title, index) in titles" :key="index">{{title}}</div>
-        <component v-for="(component, index) in defaults" :key="index" :is="component"/>
+    <div class="lava-tabs">
+        <div class="lava-tabs-nav">
+            <div class="lava-tabs-nav-item"  v-for="(title, index) in titles" :key="index">{{title}}</div>
+        </div>
+        <div class="lava-tabs-content">
+            <component class="lava-tabs-content-item" v-for="(component, index) in defaults" :key="index" :is="component"/>
+        </div>
     </div>
 </template>
 
@@ -26,3 +30,30 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    $blue: #40a9ff;
+    $color: #333;
+    $border-color: #d9d9d9;
+    .lava-tabs {
+    &-nav {
+        display: flex;
+        color: $color;
+        border-bottom: 1px solid $border-color;
+        &-item {
+            padding: 8px 0;
+            margin: 0 16px;
+            cursor: pointer;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &.selected {
+                    color: $blue;
+                }
+            }
+        }
+        &-content {
+            padding: 8px 0;
+        }
+    }
+</style>
