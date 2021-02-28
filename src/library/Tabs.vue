@@ -6,6 +6,7 @@
             :class="{selected: title === selected}"
             @click="selectTab(title)"
              >{{title}}</div>
+             <div class="lava-tabs-nav-indicator"></div>
         </div>
         <div class="lava-tabs-content">
             <component class="lava-tabs-content-item" v-for="(component, index) in defaults" 
@@ -58,6 +59,7 @@ export default {
         display: flex;
         color: $color;
         border-bottom: 1px solid $border-color;
+        position: relative;
         &-item {
             padding: 8px 0;
             margin: 0 16px;
@@ -69,7 +71,16 @@ export default {
                     color: $blue;
                 }
             }
+            &-indicator {
+                position: absolute;
+                height: 3px;
+                background: $blue;
+                left: 0;
+                bottom: -1px;
+                width: 100px;
+            }
         }
+        
         &-content {
             padding: 8px 0;
             &-item{
