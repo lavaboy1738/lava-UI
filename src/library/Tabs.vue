@@ -3,10 +3,11 @@
         <div class="lava-tabs-nav">
             <div class="lava-tabs-nav-item" 
             v-for="(title, index) in titles" :key="index"
+            :ref="el => {if(el) navItems[index] = el}"
             :class="{selected: title === selected}"
             @click="selectTab(title)"
              >{{title}}</div>
-             <div class="lava-tabs-nav-indicator"></div>
+             <div class="lava-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="lava-tabs-content">
             <component class="lava-tabs-content-item" v-for="(component, index) in defaults" 
@@ -18,6 +19,7 @@
 </template>
 
 <script lang="ts">
+import { onMounted, ref } from 'vue';
 import Tab from "./Tab.vue";
 export default {
     props:{
@@ -33,6 +35,14 @@ export default {
                 throw new Error("Tabs's children must be Tab")
             }
         })
+        const navItems = ref<HTMLDivElement[]>([]);
+        const indicator = ref<HTMLDivElement>(null);
+        onMounted(()=>{
+            const divs = navItems.value;
+            const result = divs.filter(div=>div.classList.contains("selected"))[0];
+            const {width} = result.getBoundingClientRect();
+            indicator.value.style.width = `${width}px`
+        })
 
         const titles = defaults.map((tag)=>{
             return tag.props.title
@@ -44,7 +54,9 @@ export default {
         return {
             defaults,
             titles,
-            selectTab
+            selectTab,
+            navItems,
+            indicator
         }
     }
 }
@@ -80,7 +92,6 @@ export default {
                 width: 100px;
             }
         }
-        
         &-content {
             padding: 8px 0;
             &-item{
