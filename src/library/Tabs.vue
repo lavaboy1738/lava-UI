@@ -1,6 +1,6 @@
 <template>
     <div class="lava-tabs">
-        <div class="lava-tabs-nav">
+        <div class="lava-tabs-nav" ref="container">
             <div class="lava-tabs-nav-item" 
             v-for="(title, index) in titles" :key="index"
             :ref="el => {if(el) navItems[index] = el}"
@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, onUpdated, ref } from 'vue';
 import Tab from "./Tab.vue";
 export default {
     props:{
@@ -37,12 +37,19 @@ export default {
         })
         const navItems = ref<HTMLDivElement[]>([]);
         const indicator = ref<HTMLDivElement>(null);
-        onMounted(()=>{
+        const container = ref<HTMLDivElement>(null);
+        const animateIndicator = () =>{
             const divs = navItems.value;
             const result = divs.filter(div=>div.classList.contains("selected"))[0];
             const {width} = result.getBoundingClientRect();
             indicator.value.style.width = `${width}px`
-        })
+            const {left: left1} = container.value.getBoundingClientRect();
+            const {left: left2} = result.getBoundingClientRect();
+            const left = left2 - left1;
+            indicator.value.style.left = left + "px";
+        }
+        onMounted(animateIndicator)
+        onUpdated(animateIndicator)
 
         const titles = defaults.map((tag)=>{
             return tag.props.title
@@ -56,7 +63,8 @@ export default {
             titles,
             selectTab,
             navItems,
-            indicator
+            indicator,
+            container
         }
     }
 }
@@ -90,6 +98,7 @@ export default {
                 left: 0;
                 bottom: -1px;
                 width: 100px;
+                transition: 0.3s all ease-in-out;
             }
         }
         &-content {
