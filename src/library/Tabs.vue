@@ -3,7 +3,7 @@
         <div class="lava-tabs-nav" ref="container">
             <div class="lava-tabs-nav-item" 
             v-for="(title, index) in titles" :key="index"
-            :ref="el => {if(el) navItems[index] = el}"
+            :ref="el => {if(title === selected) selectedItem = el}"
             :class="{selected: title === selected}"
             @click="selectTab(title)"
              >{{title}}</div>
@@ -35,16 +35,14 @@ export default {
                 throw new Error("Tabs's children must be Tab")
             }
         })
-        const navItems = ref<HTMLDivElement[]>([]);
+        const selectedItem = ref<HTMLDivElement>(null);
         const indicator = ref<HTMLDivElement>(null);
         const container = ref<HTMLDivElement>(null);
         const animateIndicator = () =>{
-            const divs = navItems.value;
-            const result = divs.filter(div=>div.classList.contains("selected"))[0];
-            const {width} = result.getBoundingClientRect();
+            const {width} = selectedItem.value.getBoundingClientRect();
             indicator.value.style.width = `${width}px`
             const {left: left1} = container.value.getBoundingClientRect();
-            const {left: left2} = result.getBoundingClientRect();
+            const {left: left2} = selectedItem.value.getBoundingClientRect();
             const left = left2 - left1;
             indicator.value.style.left = left + "px";
         }
@@ -62,7 +60,7 @@ export default {
             defaults,
             titles,
             selectTab,
-            navItems,
+            selectedItem,
             indicator,
             container
         }
@@ -98,7 +96,7 @@ export default {
                 left: 0;
                 bottom: -1px;
                 width: 100px;
-                transition: 0.3s all ease-in-out;
+                transition: left 0.3s ease-in-out;
             }
         }
         &-content {
