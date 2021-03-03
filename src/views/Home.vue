@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="homepage-top">
         <TopNav/>
         <div class="banner">
             <h1>Lava UI</h1>
@@ -26,7 +26,6 @@ export default {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: lightgreen;
         .actions{
             padding: 0.5rem 0;
             a{
