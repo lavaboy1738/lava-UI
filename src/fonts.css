@@ -1,0 +1,43 @@
+@font-face{
+    font-family: Jakarta;
+    src: url('./assets/fonts/PlusJakartaSans-Regular.woff') format("woff"),
+        url('./assets/fonts/PlusJakartaSans-Regular.woff2') format("woff2");
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: Jakarta;
+    src: url('./assets/fonts/PlusJakartaSans-Light.woff') format("woff"),
+    url('./assets/fonts/PlusJakartaSans-Light.woff2') format("woff2");
+    font-weight: 200;
+}
+
+@font-face{
+    font-family: Jakarta;
+    src: url("./assets/fonts/PlusJakartaSans-ExtraLight.woff") format("woff"),
+    url("./assets/fonts/PlusJakartaSans-ExtraLight.woff2") format("woff2");
+    font-weight: 100;
+}
+
+
+@font-face{
+    font-family: Jakarta;
+    src: url("./assets/fonts/PlusJakartaSans-Medium.woff") format("woff"),
+    url("./assets/fonts/PlusJakartaSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+
+@font-face{
+    font-family: Jakarta;
+    src: url("./assets/fonts/PlusJakartaSans-Bold.woff") format("woff"),
+    url("./assets/fonts/PlusJakartaSans-Bold.woff2") format("woff2");
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: Jakarta;
+    src: url("./assets/fonts/PlusJakartaSans-ExtraBold.woff") format("woff"),
+    url("./assets/fonts/PlusJakartaSans-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+}
