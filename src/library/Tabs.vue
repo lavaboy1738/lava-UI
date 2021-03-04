@@ -93,7 +93,7 @@ export default {
             }
             &-indicator {
                 position: absolute;
-                height: 3px;
+                height: 0.25rem;
                 background: $blue;
                 left: 0;
                 bottom: -1px;
@@ -102,7 +102,7 @@ export default {
             }
         }
         &-content {
-            padding: 8px 0;
+            padding: 0.5rem 0;
             &-item{
                 display: none;
                 &.selected{

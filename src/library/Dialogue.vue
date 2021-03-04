@@ -119,8 +119,8 @@ export default {
         &-close{
             position: relative;
             display: inline-block;
-            width: 16px;
-            height: 16px;
+            width: 1rem;
+            height: 1rem;
             cursor: pointer;
 
             &::before,

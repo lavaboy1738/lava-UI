@@ -48,8 +48,8 @@ export default {
             }
             .content {
                 flex-grow: 1;
-                padding-top: 60px;
-                padding-left: 156px;
+                padding-top: 3.75rem;
+                padding-left: 10rem;
                 @media (max-width: 500px) {
                 padding-left: 0; 
                 }
@@ -62,8 +62,7 @@ export default {
             }
             main {
                 flex-grow: 1;
-                padding: 16px;
-                background: white;
+                padding: 1rem;
             }
     }
     aside{
@@ -72,7 +71,7 @@ export default {
         position: fixed;
         top: 0;
         left: 0;
-        padding-top: 70px;
+        padding-top: 4.5rem;
         height: 100%;
         h2{
             margin-bottom: 0.25rem;
