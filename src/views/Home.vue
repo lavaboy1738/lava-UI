@@ -27,6 +27,7 @@ export default {
         align-items: center;
         flex-direction: column;
         h1{
+            margin: 1rem;
             font-weight: 800;
             font-size: 3rem;
         }
@@ -36,7 +37,7 @@ export default {
                 position: relative;
                 font-weight: 600;
                 color: white;
-                margin: 0 0.5rem;
+                margin: 1rem 0.5rem;
                 background-color: #ff8a00;
                 display: inline-block;
                 border-radius: 20rem;
@@ -44,7 +45,6 @@ export default {
                 z-index: 1;
                 transition: 0.1s all ease 0.15s;
                 overflow: hidden;
-                top: 0;
                 box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
                 &::before{
                     position: absolute;
@@ -60,7 +60,6 @@ export default {
                 &:hover{
                     color: #ff8a00;
                     transition: 0.1s all ease 0.15s;
-                    top: -0.25rem;
                     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
                     &::before{
                         left: 0%;
