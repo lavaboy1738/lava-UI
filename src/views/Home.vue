@@ -59,10 +59,16 @@ export default {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media (max-width: 500px){
+            padding: 6.25rem 0 0 0;
+        }
         h1{
             margin: 1rem;
             font-weight: 800;
             font-size: 3rem;
+        }
+        h2{
+            text-align: center;
         }
         .actions{
             padding: 0.5rem 0;
@@ -109,10 +115,16 @@ export default {
             display: inline-block;
             ul{
                 display: flex;
+                @media (max-width: 500px){
+                    flex-wrap: wrap;
+                }
 
                 li{
                     display: flex;
                     margin: 2rem;
+                    @media (max-width: 500px){
+                        margin: 1rem;
+                    }
                     .icon{
                         width: 4rem;
                         svg{

@@ -72,11 +72,12 @@ export default {
             }
         }
         @media (max-width: 500px){
+            justify-content: flex-end;
             .menu{
                 display: none;
             }
             .logo{
-                margin: 0 auto;
+                margin: 0;
             }
             .toggleMenu{
                 display: inline-block;
