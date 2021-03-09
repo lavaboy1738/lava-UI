@@ -45,6 +45,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .router-link-active{
+        color: #ff8a00;
+        font-weight: 600;
+    }
     .layout {
         display: flex;
         flex-direction: column;
@@ -55,7 +59,7 @@ export default {
             .content {
                 flex-grow: 1;
                 padding-top: 3.75rem;
-                padding-left: 10rem;
+                padding-left: 12rem;
                 @media (max-width: 500px) {
                 padding-left: 0; 
                 }
@@ -72,7 +76,7 @@ export default {
             }
     }
     aside{
-        width: 9.5rem;
+        width: 12rem;
         padding: 1rem;
         position: fixed;
         top: 0;
@@ -80,7 +84,9 @@ export default {
         padding-top: 4.5rem;
         height: 100%;
         h2{
+            margin-top: 1rem;
             margin-bottom: 0.25rem;
+            font-weight: 500;
         }
         ol{
             li{
