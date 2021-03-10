@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <article class="markdown-body">
         <h1>Introduction</h1>
         <p>I wrote Lava UI for study purposes. It's a UI library based on Vue 3 and Typescript.</p>
         <p>As for the name, I've been using the handle "lavaboy1738" for a while, so might as well call it "Lava UI"</p>
@@ -12,16 +12,3 @@
         <p>All the source code is stored in a public repository, <strong>here's the link: https://github.com/lavaboy1738/lava-UI</strong></p>
     </article>
 </template>
-
-<style lang="scss" scoped>
-    h1{
-        margin-bottom: 1rem;
-    }
-    a{
-        font-weight: 600;
-    }
-    p{
-        line-height: 150%;
-        margin-bottom: 1rem;
-    }
-</style>
