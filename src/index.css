@@ -27,6 +27,10 @@ a{
   color: inherit;
 }
 
+p{
+  word-spacing: 0.15rem;
+}
+
 ol, ul{
   list-style: none;
 }
