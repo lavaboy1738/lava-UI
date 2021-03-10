@@ -40,7 +40,7 @@ export default {
             transition: 0.3s all ease;
         }
         &.lava-checked{
-            background: blue;
+            background: #40a9ff;
             transition: 0.3s all ease;
             span{
                 transition: 0.3s all ease;

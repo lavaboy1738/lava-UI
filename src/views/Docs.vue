@@ -97,5 +97,6 @@ export default {
     }
     main {
         overflow: auto;
+        margin: 0.8rem;
     }
 </style>
