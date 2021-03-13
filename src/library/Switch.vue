@@ -1,11 +1,18 @@
 <template>
-    <button class="lava-switch" :class="{'lava-checked': value}" @click="toggle" > <span></span> </button>
+    <button class="lava-switch" :class="{'lava-checked': value}" :disabled="disabled" @click="toggle" > <span></span> </button>
 </template>
 
 <script lang="ts">
 export default {
     props: {
-        value: Boolean,
+        value: {
+            tyoe: Boolean,
+            default: false,
+        },
+        disabled:{
+            type: Boolean,
+            default: false,
+        }
     },
     setup(props, context){
         const toggle = () => {
