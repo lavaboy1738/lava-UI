@@ -3,7 +3,7 @@
 <div class="demo">
     <h2 class="demo-title">Common Use Case</h2>
     <div class="demo-component">
-        <Switch v-model:value="inputValue" />
+        <SwitchDemo1/>
     </div>
     <div class="demo-actions">
         <Button>Source Code</Button>
@@ -15,7 +15,7 @@
 <div class="demo">
     <h2 class="demo-title">Disabled</h2>
     <div class="demo-component">
-        <Switch v-model:value="inputValue2" disabled />
+        <SwitchDemo2/>
     </div>
     <div class="demo-actions">
         <Button>Source Code</Button>
@@ -27,25 +27,21 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
 import Switch from "../library/Switch.vue";
+import SwitchDemo1 from "./SwitchDemo1.vue";
+import SwitchDemo2 from "./SwitchDemo2.vue";
 import Button from "../library/Button.vue";
 export default {
-    components: {Switch, Button},
+    components: {Switch, Button, SwitchDemo1, SwitchDemo2},
     setup(){
-        const inputValue = ref(false);
-        const inputValue2 = ref(false);
-        return{inputValue, inputValue2};
     }
 }
 </script>
 
 <style lang="scss" scopded>
-    h1{
-        margin-bottom: 1rem;
-    }
     .demo{
         border: 1px solid rgba(0, 0, 0, 0.3);
+        margin: 2rem 0;
         &-title, &-actions, &-code, &-component{
             padding: 1rem;
         }
