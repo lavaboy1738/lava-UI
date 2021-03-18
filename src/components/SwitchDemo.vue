@@ -21,7 +21,7 @@
         <Button>Source Code</Button>
     </div>
     <div class="demo-code">
-        <pre>&lt;lava-switch disabled /&gt;</pre>
+        <pre class="language-html" v-html="Prism.highlight(textCode, Prism.languages.html, 'html')"></pre>
     </div>
 </div>
 </template>
@@ -30,10 +30,17 @@
 import Switch from "../library/Switch.vue";
 import SwitchDemo1 from "./SwitchDemo1.vue";
 import SwitchDemo2 from "./SwitchDemo2.vue";
+import "prismjs";
+import "prismjs/themes/prism-okaidia.css";
 import Button from "../library/Button.vue";
+
+const Prism = (window as any).Prism;
+const textCode = "<lava-switch disabled />";
+
 export default {
     components: {Switch, Button, SwitchDemo1, SwitchDemo2},
     setup(){
+        return{Prism, textCode}
     }
 }
 </script>
