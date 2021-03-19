@@ -3,44 +3,45 @@
 <div class="demo">
     <h2 class="demo-title">Common Use Case</h2>
     <div class="demo-component">
-        <SwitchDemo1/>
+        <Switch v-model:value="bool" />
     </div>
     <div class="demo-actions">
         <Button>Source Code</Button>
     </div>
     <div class="demo-code">
-        <pre>&lt;lava-switch v-model:value="bool" /&gt;</pre>
+        <pre class="language-html" v-html="Prism.highlight(textCode1, Prism.languages.html, 'html')"></pre>
     </div>
 </div>
 <div class="demo">
     <h2 class="demo-title">Disabled</h2>
     <div class="demo-component">
-        <SwitchDemo2/>
+        <Switch disabled/>
     </div>
     <div class="demo-actions">
         <Button>Source Code</Button>
     </div>
     <div class="demo-code">
-        <pre class="language-html" v-html="Prism.highlight(textCode, Prism.languages.html, 'html')"></pre>
+        <pre class="language-html" v-html="Prism.highlight(textCode2, Prism.languages.html, 'html')"></pre>
     </div>
 </div>
 </template>
 
 <script lang="ts">
 import Switch from "../library/Switch.vue";
-import SwitchDemo1 from "./SwitchDemo1.vue";
-import SwitchDemo2 from "./SwitchDemo2.vue";
 import "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import Button from "../library/Button.vue";
+import { ref } from 'vue';
 
 const Prism = (window as any).Prism;
-const textCode = "<lava-switch disabled />";
+const textCode1 = `<template>\r\n    <Switch v-model:value=\"bool\" \/>\r\n<\/template>\r\n\r\n<script lang=\"ts\">\r\nimport { ref } from 'vue';\r\nimport Switch from \"..\/library\/Switch.vue\";\r\nexport default {\r\n     components: {Switch},\r\n    setup(){\r\n        const bool = ref(false);\r\n        return{bool};\r\n    }\r\n}\r\n<\/script>`;
+const textCode2 = `<template>\r\n    <Switch v-model:value=\"bool\" disabled \/>\r\n<\/template>\r\n\r\n<script lang=\"ts\">\r\nimport { ref } from 'vue';\r\nimport Switch from \"..\/library\/Switch.vue\";\r\nexport default {\r\n     components: {Switch},\r\n    setup(){\r\n        const bool = ref(false);\r\n        return{bool};\r\n    }\r\n}\r\n<\/script>`;
 
 export default {
-    components: {Switch, Button, SwitchDemo1, SwitchDemo2},
+    components: {Switch, Button},
     setup(){
-        return{Prism, textCode}
+        const bool = ref(false);
+        return{Prism, textCode1 ,textCode2, bool}
     }
 }
 </script>
