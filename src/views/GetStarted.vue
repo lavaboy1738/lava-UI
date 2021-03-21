@@ -1,13 +1,13 @@
 <template>
     <h1>Get Started</h1>
     <h2>Import Components</h2>
-        <pre class="language-javascript" v-html="Prism.highlight(importCode, Prism.languages.javascript, 'javascript')"></pre>
+    <pre class="language-javascript" v-html="Prism.highlight(importCode, Prism.languages.javascript, 'javascript')"></pre>
     <h2>Register Components</h2>
-        <pre class="language-javascript" v-html="Prism.highlight(registerCode, Prism.languages.javascript, 'javascript')"></pre>
+    <pre class="language-javascript" v-html="Prism.highlight(registerCode, Prism.languages.javascript, 'javascript')"></pre>
     <h2>Usage</h2>
-        <pre class="language-html" v-html="Prism.highlight(usageCode, Prism.languages.html, 'html')"></pre>
     <h3>Example</h3>
     <Button>Default Button</Button>
+    <pre class="language-html" v-html="Prism.highlight(usageCode, Prism.languages.html, 'html')"></pre>
 </template>
 
 <script lang="ts">
@@ -38,6 +38,6 @@ export default {
         margin-bottom: 2rem;
     }
     h3{
-        margin-bottom: 1rem;
+        margin: 1rem 0;
     }
 </style>
