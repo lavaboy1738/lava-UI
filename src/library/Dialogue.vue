@@ -95,6 +95,7 @@ export default {
     .lava-dialogue{
         background: white;
         border-radius: $radius;
+        font-family: Jakarta;
         box-shadow: 0 0 3px fade-out(black, 0.5);
         min-width: 15rem;
         max-width: 90%;

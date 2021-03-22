@@ -2,16 +2,15 @@
     <h1>Dialogue Component</h1>
     <Button @click="toggle">Toggle Dialogue</Button>
     <Dialogue v-model:isVisible="isVisible" 
-    :closeOnClickOverlay="false"
+    :closeOnClickOverlay="true"
     v-bind:confirmFn="confirmFn"
     v-bind:cancelFn = "cancelFn"
     >
     <template v-slot:title>
-        <strong>Title</strong>
+        <div>Dialogue Title</div>
     </template>
     <template v-slot:content>
-        <div>Content</div>
-        <div>Biscuits and Gravy</div>
+        <div>Click the outside overlay to close the window</div>
     </template>
     </Dialogue>
     <h1>Open Dialogue Function</h1>
