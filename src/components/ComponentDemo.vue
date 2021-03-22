@@ -5,7 +5,7 @@
             <slot/>
         </div>
         <div class="demo-actions">
-            <Button @click="toggleCode" >Source Code</Button>
+            <Button @click="toggleCode" >Show Code</Button>
         </div>
         <div class="demo-code" v-if="codeVisible">
             <pre class="language-html" v-html="Prism.highlight(sourceCode, Prism.languages.html, 'html')"></pre>
