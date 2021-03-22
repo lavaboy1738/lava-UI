@@ -3,8 +3,8 @@
     <Button @click="toggle">Toggle Dialogue</Button>
     <Dialogue v-model:isVisible="isVisible" 
     :closeOnClickOverlay="false"
-    confirmFn="confirmFn"
-    cancelFn = "cancelFn"
+    v-bind:confirmFn="confirmFn"
+    v-bind:cancelFn = "cancelFn"
     >
     <template v-slot:title>
         <strong>Title</strong>
