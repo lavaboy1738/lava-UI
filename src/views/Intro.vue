@@ -9,6 +9,14 @@
             Everything was written by myself, including this documentation website, and I tried to avoid using other libraries and dependencies as much as I could. 
             <strong>Therefore, I don't really recommend using this UI library in production.</strong></p>
             <p>However, if you wanted to checkout the source code, then you're most definitely in the right place.</p>
-        <p>All the source code is stored in a public repository, <strong>here's the link: https://github.com/lavaboy1738/lava-UI</strong></p>
+        <p>All the source code is stored in a public repository, <strong>here's the link: <a href="https://github.com/lavaboy1738/lava-UI">https://github.com/lavaboy1738/lava-UI</a></strong></p>
+        <Button @click="$router.push('installation')">Next: Installation</Button>
     </article>
 </template>
+
+<script lang="ts">
+import Button from "../library/Button.vue";
+export default {
+    components:{Button}
+}
+</script>
