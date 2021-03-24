@@ -9,6 +9,7 @@
                 </svg>
             </router-link>
             <ul class="menu">
+                <li><a href="https://github.com/lavaboy1738/lava-UI">Github</a></li>
             </ul>
             <span class="toggleMenu" @click="toggleMenu">
                 <i class='bx bx-menu'></i>
