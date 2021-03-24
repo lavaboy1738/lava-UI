@@ -1,5 +1,5 @@
 <template>
-    <h1>Button Component Demo</h1>
+    <h1>Button Component</h1>
     <ComponentDemo v-bind:sourceCode="defaultButtonCode" title="Default Buttons">
         <Button theme="button" size="large">Large</Button>
         <Button theme="button" size="normal">Normal</Button>

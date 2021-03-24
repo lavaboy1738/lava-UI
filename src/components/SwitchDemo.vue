@@ -1,9 +1,9 @@
 <template>
-    <h1>Switch Component Demo</h1>
+    <h1>Switch Component</h1>
     <ComponentDemo v-bind:sourceCode="sourceCode1" title="Common Use Case" >
         <Switch v-model:value="bool" />
     </ComponentDemo>
-    <ComponentDemo v-bind:sourceCode="sourceCode2" title="Common Use Case" >
+    <ComponentDemo v-bind:sourceCode="sourceCode2" title="Disabled Switch" >
         <Switch disabled/>
     </ComponentDemo>
 </template>

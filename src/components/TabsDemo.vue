@@ -1,5 +1,5 @@
 <template>
-    <h1>Tabs Demo</h1>
+    <h1>Tabs Component</h1>
     <ComponentDemo title="Multi-Tabs" v-bind:sourceCode="tabsCode">
         <Tabs v-model:selected="defaultTab">
             <Tab title="Tab1">My name is Jeff</Tab>
