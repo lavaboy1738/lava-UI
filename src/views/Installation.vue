@@ -6,5 +6,13 @@
         <pre><code>$ yarn add lava-ui</code></pre>
         <h2>NPM</h2>
         <pre><code>$ npm install lava-ui</code></pre>
+        <Button @click="$router.push('get-started')">Next: Get Started</Button>
     </article>
 </template>
+
+<script lang="ts">
+import Button from "../library/Button.vue";
+export default {
+    components:{Button}
+}
+</script>
