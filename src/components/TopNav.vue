@@ -9,8 +9,6 @@
                 </svg>
             </router-link>
             <ul class="menu">
-                <li>Menu1</li>
-                <li>Menu2</li>
             </ul>
             <span class="toggleMenu" @click="toggleMenu">
                 <i class='bx bx-menu'></i>
