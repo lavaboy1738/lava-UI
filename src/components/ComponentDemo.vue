@@ -5,7 +5,8 @@
             <slot/>
         </div>
         <div class="demo-actions">
-            <Button @click="toggleCode" >Show Code</Button>
+            <Button @click="hideCode" v-if="codeVisible">Hide Code</Button>
+            <Button @click="showCode" v-else >Show Code</Button>
         </div>
         <div class="demo-code" v-if="codeVisible">
             <pre class="language-html" v-html="Prism.highlight(sourceCode, Prism.languages.html, 'html')"></pre>
@@ -36,12 +37,14 @@ export default {
     setup(props){
         const {sourceCode, title} = props;
         const codeVisible = ref(false);
-        const toggleCode = () => codeVisible.value = !codeVisible.value;
+        const showCode = () => codeVisible.value = true;
+        const hideCode = () => codeVisible.value = false;
         return{
             Prism,
             codeVisible,
-            toggleCode,
             sourceCode,
+            showCode,
+            hideCode,
             title
         }
     }
