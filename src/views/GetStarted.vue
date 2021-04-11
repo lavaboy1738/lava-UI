@@ -16,7 +16,7 @@ import "prismjs/themes/prism-okaidia.css";
 import Button from "../library/Button.vue";
 const Prism = (window as any).Prism;
 
-const importCode = `import {Button} from \"lava-ui\";\r\nimport \"lava-ui\/dist\/index.css\";`;
+const importCode = `import {Button} from \"lava-ui\";\r\nimport \"lava-ui\/dist\/library\/lava-ui.css\";`;
 const registerCode = `export default {\r\n  name: \"ComponentName\",\r\n  components: {\r\n    \"lava-button\": Button,\r\n  },\r\n}`;
 const usageCode = `<template>\r\n  <div>\r\n    <lava-button>Default Button<\/lava-button>\r\n  <\/div>\r\n<\/template>`;
 
